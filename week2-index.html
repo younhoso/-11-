@@ -1,0 +1,249 @@
+<!doctype html>
+<html lang="en">
+  <head>
+	<!-- Required meta tags -->
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+	<!-- Bootstrap CSS -->
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+
+	<link rel="stylesheet" href="main.css">
+
+	<title>Hello, world!</title>
+</head>
+
+<body>
+
+	<div class="black-background" id="modal">
+		<div class="white-background">
+			<h4 id="modal-title">Log in Please</h4>
+			<form action="/" onsubmit="return 이메일공백체크()">
+				<div class="form-group mt-4">
+					<input type="email" class="form-control" placeholder="Enter email" id="email">
+				</div>
+				<div class="form-group">
+					<input type="password" class="form-control" placeholder="Password">
+				</div>
+				<button type="submit" class="btn btn-primary">Submit</button>
+
+			</form>
+			<button class="btn btn-danger" id="close">CLOSE</button>
+		</div>
+	</div>
+
+	<script>
+		document.getElementById('close').addEventListener('click', function() {
+			document.getElementById('modal').style.display = 'none';
+		});
+		
+		//1. 모달창 배경누르면 닫히게 만들기
+		document.getElementById('modal').addEventListener('click', function(e){
+
+			e.target; //현재 클릭한 HTML
+			e.currentTarget; //현재 이벤트가 달린 곳 
+			
+			//현재 클릭한 HTML이 검은 배경일 경우에만, 닫히게 해주세요.
+
+		});
+		
+	</script>
+
+
+
+
+
+	<nav class="navbar navbar-expand-lg navbar-light bg-light">
+		<a class="navbar-brand">Dress Shop</a>
+		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+		<div class="collapse navbar-collapse" id="navbarSupportedContent">
+			<ul class="navbar-nav ml-auto">
+				<li class="nav-item active">
+					<a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="#">Products</a>
+				</li>
+				<li class="nav-item dropdown">
+					<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Dropdown
+        </a>
+					<div class="dropdown-menu" aria-labelledby="navbarDropdown">
+						<a class="dropdown-item" href="#">Action</a>
+						<a class="dropdown-item" href="#">Another action</a>
+						<div class="dropdown-divider"></div>
+						<a class="dropdown-item" href="#">Something else here</a>
+					</div>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link disabled" href="#">Disabled</a>
+				</li>
+			</ul>
+
+		</div>
+	</nav>
+
+
+
+	<div class="jumbotron main-background">
+		<h1 class="display-4">Welcome Back!</h1>
+		<p class="lead">This is a simple hero unit, a simple jumbotron-style component for calling extra attention to featured content or information.</p>
+		<hr class="my-4">
+		<p>It uses utility classes for typography and spacing to space content out within the larger container.</p>
+		<button class="btn btn-primary btn-lg" onclick="모달창열기('로그인하세요')">Log in</button>
+		<button class="btn btn-primary btn-lg" onclick="모달창열기('가입하세요')">가입</button>
+
+
+	</div>
+
+	<script>
+
+
+		function 이메일공백체크() {
+
+			if (document.getElementById("email").value === '') {
+				alert('이메일써라');
+				return false
+			} else {
+				return true
+			}
+
+		}
+		
+		function 모달창열기(text) {
+			document.getElementById('modal').style.display = 'block';
+			//모달창을 열자마자 제목을 샥 바꿔줌 
+			document.getElementById('modal-title').innerHTML = text;
+		}
+
+
+	</script>
+
+
+	<div class="container">
+		<div class="row">
+			<div class="col-md-4">
+				<div class="card">
+					<img class="card-img-top" src="img/pic1.jpg" alt="Card image cap">
+					<div class="card-body">
+						<h5 class="card-title">Card title</h5>
+						<p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+						<a href="#" class="btn btn-primary">Go somewhere</a>
+					</div>
+				</div>
+			</div>
+			<div class="col-md-4">
+				<div class="card">
+					<img class="card-img-top" src="img/pic2.jpg" alt="Card image cap">
+					<div class="card-body">
+						<h5 class="card-title">Card title</h5>
+						<p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+						<a href="#" class="btn btn-primary">Go somewhere</a>
+					</div>
+				</div>
+			</div>
+			<div class="col-md-4">
+				<div class="card">
+					<img class="card-img-top" src="img/pic3.jpg" alt="Card image cap">
+					<div class="card-body">
+						<h5 class="card-title">Card title</h5>
+						<p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+						<a href="#" class="btn btn-primary">Go somewhere</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+	<script>
+
+		var products = [{
+				id: 1,
+				price: 299,
+				img: 'img/pic1.jpg',
+				title: 'Blossom Dress',
+				text: "Do you like some random yellow stuff? Here's one for you."
+			},
+			{
+				id: 2,
+				price: 199,
+				img: 'img/pic1.jpg',
+				title: 'Springfield Shirt',
+				text: "Stole it from my dad."
+			},
+			{
+				id: 3,
+				price: 399,
+				img: 'img/pic3.jpg',
+				title: 'Black Monastery',
+				text: "The best beer comes from the monastery."
+			}
+		];
+		
+		
+		products.sort(function(a,b){
+			//products 라는 데이터를 가격 낮은 순으로 정렬하려면
+			//어떤 수식을 여기에 집어넣어야할까요 
+		});
+		
+		//데이터 바인딩 실습
+		
+		
+		
+		//ES6 신문법 map / filter로 array 변경하는 법
+		var array = [3,2,1,4,5];
+		
+		var array2 = array.map(function(a){
+			return a * 1154
+		});
+
+		var array3 = array.filter((a) => a > 2)
+	
+
+	</script>
+
+
+
+<br>복습0. products 변수안에 저장되어있는 첫째 상품의 제목과 설명을 HTML에 데이터 바인딩을 해보도록 합시다.  
+		
+<br>복습1. 모달창 배경 누르면 닫기 기능을 만들어봅시다. 
+		
+<br>복습2. products라는 array 데이터를 가격 순으로 정렬하려면 어떻게 해야할까요
+		
+<br>복습3. main.js 내용을 싹 다 지우고 탭기능을 직접 처음부터 한번 만들어봅시다. 
+		- 뭘로 시작해야할지 모르겠다면 한글로 설명부터 적어둡시다. 
+		
+		
+		
+<br>숙제0. 지금 products라는 변수 내에 상품3개가 있는데 
+		상품0,1,2들의 제목과 설명을 끄집어내서 전부 메인페이지에 데이터바인딩 해보세요. 
+		- 오늘 배운 반복문을 사용해보면 더 효율적이지않을까요
+		
+		
+<br>숙제1. [가격 낮은 순으로 정렬] 버튼을 사이트 내에 만들어보세요. 
+		- 정렬 버튼을 누르면 상품들이 샤샤샥 정렬되어야겠죠?
+		
+<br>숙제2. 이번엔 [200달러 이하 상품만 보기] 버튼을 만들어봅시다.
+		- 힌트 : filter 함수를 이용해보면 어떨까요 
+		
+<br>숙제3. [제목 가다나 순 정렬]버튼도 한번 만들어봅시다. 
+		
+<br>예습1. 심심하면 마지막에 말씀드린 그 .. addEventListener를 하나만 써서 탭기능을 다시 만들어보도록 합시다. 
+
+
+
+
+
+
+	<!-- Optional JavaScript -->
+	<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+</body>
+</html>
+

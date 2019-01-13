@@ -1,0 +1,365 @@
+<!doctype html>
+<html lang="en">
+  <head>
+	<!-- Required meta tags -->
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+	<!-- Bootstrap CSS -->
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+
+	<link rel="stylesheet" href="main.css">
+
+	
+	<title>Hello, world!</title>
+</head>
+
+<body>
+
+	<div class="black-background" id="modal">
+		<div class="white-background">
+			<h4 id="modal-title">Log in Please</h4>
+			<form onsubmit="return 이메일공백체크()">
+				<div class="form-group mt-4">
+					<input type="email" name="ID" class="form-control" placeholder="Enter email" id="email">
+				</div>
+				<div class="form-group">
+					<input type="password" name="PW" class="form-control" placeholder="Password" id="PW">
+				</div>
+				<button id="Submit" type="submit" class="btn btn-primary">Submit</button>
+			</form>
+			
+			<button class="btn btn-danger" id="close">CLOSE</button>
+		</div>
+	</div>
+
+	<script>
+		document.getElementById('close').addEventListener('click', function() {
+
+			document.getElementById('modal').style.display = 'none';
+		});
+
+
+		document.getElementById('modal').addEventListener('click', function(e) {
+
+			e.target; //현재 클릭한 HTML
+			e.currentTarget; //현재 이벤트가 달린 곳 (EventListener 왼쪽에 있는애)
+
+			//현재 클릭한 HTML이 검은 배경일 경우에만, 닫히게 해주세요.
+
+			if (e.target === e.currentTarget) {
+				document.getElementById('modal').style.display = 'none';
+			}
+		});
+	</script>
+
+
+
+
+
+	<nav class="navbar navbar-expand-lg navbar-light bg-light transparent">
+		<a class="navbar-brand">Dress Shop</a>
+		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+		<div class="collapse navbar-collapse" id="navbarSupportedContent">
+			<ul class="navbar-nav ml-auto">
+				<li class="nav-item active">
+					<a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="#">Products</a>
+				</li>
+				<li class="nav-item dropdown">
+					<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Dropdown
+        </a>
+					<div class="dropdown-menu" aria-labelledby="navbarDropdown">
+						<a class="dropdown-item" href="#">Action</a>
+						<a class="dropdown-item" href="#">Another action</a>
+						<div class="dropdown-divider"></div>
+						<a class="dropdown-item" href="#">Something else here</a>
+					</div>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link disabled" href="#">Disabled</a>
+				</li>
+			</ul>
+
+		</div>
+	</nav>
+	
+
+	
+
+
+
+	<div class="jumbotron main-background">
+		<h1 class="display-4">Welcome Back!</h1>
+		<p class="lead">This is a simple hero unit, a simple jumbotron-style component for calling extra attention to featured content or information.</p>
+		<hr class="my-4">
+		<p>It uses utility classes for typography and spacing to space content out within the larger container.</p>
+		<button class="btn btn-primary btn-lg" onclick="모달창열기('로그인하세요')">Log in</button>
+		<button class="btn btn-primary btn-lg" onclick="모달창열기('가입하세요')">가입</button>
+
+
+	</div>
+
+	<script>
+		if (3 > 2) {
+			console.log('맞았어요');
+		} else {
+			console.log('틀렸는데여');
+		}
+
+		function 안녕() {
+			return 10
+		}
+
+
+
+
+		function 법카결제() {
+			if (오늘점심값 < 5000) {
+				return '승인'
+			} else {
+				return '거절'
+			}
+		}
+
+		var 오늘점심값 = '8000';
+		법카결제();
+
+
+		function 이메일공백체크() {
+			if (document.getElementById("email").value === '') {
+				alert('이메일써라');
+				return false
+			} else {
+				return true
+			}
+		}
+
+		function 모달창열기(text) {
+			document.getElementById('modal').style.display = 'block';
+			//모달창을 열자마자 제목을 샥 바꿔줌 
+			document.getElementById('modal-title').innerHTML = text;
+		}
+		
+		function plus(a) {
+			console.log(1 + a);
+		}
+	</script>
+
+
+	<div class="container">
+		<div class="row">
+			<div class="col-md-4">
+				<div class="card">
+					<img class="card-img-top" src="img/pic1.jpg" alt="Card image cap">
+					<div class="card-body">
+						<h5 class="card-title">Card title</h5>
+						<p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+						<a href="#" class="btn btn-primary">Go somewhere</a>
+					</div>
+				</div>
+			</div>
+			<div class="col-md-4">
+				<div class="card">
+					<img class="card-img-top" src="img/pic2.jpg" alt="Card image cap">
+					<div class="card-body">
+						<h5 class="card-title">Card title</h5>
+						<p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+						<a href="#" class="btn btn-primary">Go somewhere</a>
+					</div>
+				</div>
+			</div>
+			<div class="col-md-4">
+				<div class="card">
+					<img class="card-img-top" src="img/pic3.jpg" alt="Card image cap">
+					<div class="card-body">
+						<h5 class="card-title">Card title</h5>
+						<p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+						<a href="#" class="btn btn-primary">Go somewhere</a>
+					</div>
+				</div>
+			</div>
+			
+		</div>
+	</div>
+
+	<div class="container my-5">
+		<button id="more" class="btn btn-danger">▼ 더보기</button>
+	</div>
+
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+
+<card>
+	<productimg/>
+	<title></title>
+	<text></text>
+	<blue-button></blue-button>
+</card>
+
+	<script>
+		var name = '20';
+		var age = 20;
+		var array = ['1', 2, 3, 4, 5];
+		var object = {
+			name: 'John',
+			age: 20
+		}
+
+		var car = ['BMW', '520d', 'white'];
+
+		var car2 = {
+			brand: 'BMW',
+			model: '520d',
+			color: 'white'
+		}
+
+		var products = [{
+				id: 1,
+				price: 299,
+				img: 'img/pic1.jpg',
+				title: 'Blossom Dress',
+				text: "Do you like some random yellow stuff? Here's one for you."
+			},
+			{
+				id: 2,
+				price: 199,
+				img: 'img/pic1.jpg',
+				title: 'Springfield Shirt',
+				text: "Stole it from my dad."
+			},
+			{
+				id: 3,
+				price: 399,
+				img: 'img/pic3.jpg',
+				title: 'Black Monastery',
+				text: "The best beer comes from the monastery."
+			}
+		];
+
+		for (var i = 0; i < 3; i++) {
+			document.getElementsByClassName('card-title')[i].innerHTML = products[i].title;
+			document.querySelectorAll('.card-text')[i].innerHTML = products[i].text;
+		}
+
+		var array = [3, 2, 1, 4, 5];
+		var array2 = array.map(function(a) {
+			return a * 1154
+		});
+
+		var array3 = array.filter((a) => a > 2)
+
+		console.log(array3);
+	</script>
+
+
+
+
+
+
+
+
+
+
+	<!-- Optional JavaScript -->
+	<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+
+<script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+	<script>
+	
+		//스크롤바를 50px 정도 내리면,
+		//a.navbar-brand 라는 태그에다가 .small-font를 적용하기
+	
+		$(window).on('scroll', function(){
+			
+			var height = $(this).scrollTop();
+			console.log(height);
+			
+			if (height > 100){
+				$('a.navbar-brand').addClass('small-font');
+			} else {
+				$('a.navbar-brand').removeClass('small-font');
+			}
+			
+		});
+		
+		
+	</script>
+	
+
+	<script>
+		
+		$('#more').click(function() {
+			$.ajax({
+				type: 'GET',
+				url: 'data.json' 
+
+			}).done(function(data) {
+
+			for (var i = 0; i < 3; i++){
+				var template = `
+	      		<div class="col-md-4">
+				<div class="card">
+				<img class="card-img-top" src="img/pic3.jpg" alt="Card image cap">
+				<div class="card-body">
+				<h5 class="card-title">${data[i].title}</h5>
+				<p class="card-text">${data[i].text}</p>
+				<a href="#" class="btn btn-primary">Go somewhere</a></div></div></div>
+				`;
+				$('div.row').append(template);
+			}	
+				
+			});
+		});
+		
+		//html 템플릿을 만들고
+		//html 템플릿안에 원하는 데이터로 꾸미고
+		//append 해주시면 됩니다. 
+		
+		
+
+		// <p>숙제4. 메인페이지에 로그인 모달창 있던거 기억나십니까. 
+		// ajax배운 기념으로 사이트 로그인을 새로고침없이 ajax요청으로 만들려고 합니다. 
+		// 아이디와 비번을 입력후 submit버튼을 누르면 ajax요청하는 코드를 작성해보세요.
+		// 		<br>조건1. login.php 라는 url로 POST 요청을 해야합니다.
+		// 		<br>조건2. 요청시 id : '~~', pass : '~~' 이 두가지 데이터를 서버에 전달해야합니다.
+		// 		<br>조건3. 서버가 없어 테스트는 불가능하지만 성공시 콘솔창에 성공, 실패시 콘솔창에 에러메세지를 띄우도록 코드를 짭니다.
+		// 	</p>
+		
+		$('#Submit').click(function (e) {
+			e.preventDefault();
+			var request = $.ajax({
+				url: "login.php",
+				dataType: 'html',
+				method: "post",
+				data: { 
+					id: $("#email").val(),
+					PW: $("#PW").val()
+				},
+			});
+
+			request.done(function (msgdata) {
+				alert($("#email").val());
+			});
+
+			request.fail(function (jqXHR, textStatus) {
+				alert(textStatus);
+			});
+		})
+		
+		
+	</script>
+
+
+	<script src="./main.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+</body>
+</html>
+

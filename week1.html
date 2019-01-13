@@ -1,0 +1,144 @@
+<!doctype html>
+<html lang="en">
+  <head>
+	<!-- Required meta tags -->
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+	<!-- Bootstrap CSS -->
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+
+	<link rel="stylesheet" href="main.css">
+
+	<title>Hello, world!</title>
+</head>
+
+<body>
+
+	<div class="black-background" id="modal">
+		<div class="white-background">
+			<h4 id="modal-title">Log in Please</h4>
+			<form action="/" onsubmit="return 이메일공백체크()">
+				<div class="form-group mt-4">
+					<input type="email" class="form-control" placeholder="Enter email" id="email">
+				</div>
+				<div class="form-group">
+					<input type="password" class="form-control" placeholder="Password">
+				</div>
+				<button type="submit" class="btn btn-primary">Submit</button>
+				
+			</form>
+			<button class="btn btn-danger" id="close">CLOSE</button>
+		</div>
+	</div>
+	
+	<script>
+	
+	//addEventListener 를 이용해서 닫기버튼을 만들기 
+  
+	//닫기버튼을 찾아서.addEventListener('click',function(){
+		//버튼 눌렀을 때 실행할 코드
+  //}); 
+	
+	</script>
+	
+	
+
+
+
+	<nav class="navbar navbar-expand-lg navbar-light bg-light">
+		<a class="navbar-brand">Dress Shop</a>
+		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+		<div class="collapse navbar-collapse" id="navbarSupportedContent">
+			<ul class="navbar-nav ml-auto">
+				<li class="nav-item active">
+					<a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="#">Products</a>
+				</li>
+				<li class="nav-item dropdown">
+					<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Dropdown
+        </a>
+					<div class="dropdown-menu" aria-labelledby="navbarDropdown">
+						<a class="dropdown-item" href="#">Action</a>
+						<a class="dropdown-item" href="#">Another action</a>
+						<div class="dropdown-divider"></div>
+						<a class="dropdown-item" href="#">Something else here</a>
+					</div>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link disabled" href="#">Disabled</a>
+				</li>
+			</ul>
+
+		</div>
+	</nav>
+
+
+
+	<div class="jumbotron main-background">
+		<h1 class="display-4">Welcome Back!</h1>
+		<p class="lead">This is a simple hero unit, a simple jumbotron-style component for calling extra attention to featured content or information.</p>
+		<hr class="my-4">
+		<p>It uses utility classes for typography and spacing to space content out within the larger container.</p>
+		<button class="btn btn-primary btn-lg" onclick="">Log in</button>
+		<button class="btn btn-primary btn-lg" onclick="">가입</button>
+		
+		
+	</div>
+
+	<script>
+
+		function 모달창열기() {
+			//1. 모달창을 열어주는 기능
+			document.getElementById('??').style.display = '??';
+			
+      //2. 모달창을 열자마자 제목을 샥 바꿔주는 기능 
+			//3. 경우에 따라서 제목을 달리 바꿔주는 기능(함수의 인자를 활용)
+		
+		}
+
+		function 법카결제() {   
+				return '승인'
+		}
+		
+    var 오늘점심값 = '8000';
+		법카결제();
+		
+
+		//오늘점심값이라는 변수가 5000원 이하면 '승인'을 return, 
+		//오늘점심값이라는 변수가 5000원 이상이면 '거절'을 return 하는 
+		//법카결제() 함수를 만들어보세요. 
+		
+
+		
+		function 이메일공백체크(){
+			//이메일 input 안의 값이 공백일 경우 
+			//false를 return함
+			//이메일 input 안의 값이 공백이 아닐 경우
+			//true를 return 함	
+		}
+			
+			//숙제1. email 입력란이 공백일 경우 "이메일입력하세요"라는 안내문이 입력란 밑에 표시되도록 만들어보세요. 
+			//숙제2. 이메일뿐만 아니라 비밀번호입력란까지 공백 검사하려면?
+			//숙제3. 함수를 만들지말고 addEventListener를 이용해 공백체크 기능을 만들어보세요. (구글검색필요)
+
+	</script>
+
+
+
+
+
+	<!-- Optional JavaScript -->
+	<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+</body>
+</html>
+

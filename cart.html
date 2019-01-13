@@ -1,0 +1,208 @@
+<!doctype html>
+<html lang="en">
+  <head>
+	<!-- Required meta tags -->
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+	<!-- Bootstrap CSS -->
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+
+	<link href="main.css" rel="stylesheet">
+
+	<title>Hello, world!</title>
+</head>
+
+<body>
+	<nav class="navbar navbar-expand-lg navbar-light bg-light">
+		<a class="navbar-brand">Dress Shop</a>
+		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+		<div class="collapse navbar-collapse" id="navbarSupportedContent">
+			<ul class="navbar-nav ml-auto">
+				<li class="nav-item active">
+					<a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="#">Products</a>
+				</li>
+				<li class="nav-item dropdown">
+					<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Dropdown
+        </a>
+					<div class="dropdown-menu" aria-labelledby="navbarDropdown">
+						<a class="dropdown-item" href="#">Action</a>
+						<a class="dropdown-item" href="#">Another action</a>
+						<div class="dropdown-divider"></div>
+						<a class="dropdown-item" href="#">Something else here</a>
+					</div>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link disabled" href="#">Disabled</a>
+				</li>
+			</ul>
+
+		</div>
+	</nav>
+
+	<div class="container text-center my-5">
+		<h4>장바구니</h4>
+	</div>
+	
+	<table class="table">
+  <thead class="thead-dark">
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">상품명</th>
+      <th scope="col">수량</th>
+      <th scope="col">사이즈</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row">1</th>
+			<td>Blossom Dress</td>
+      <td>
+      <button class="btn plus">+</button>
+      <span>4</span>
+      <button class="btn minus">-</button>
+      </td>
+      <td>Red</td>
+    </tr>
+  </tbody>
+</table>
+	
+	<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+	
+	<script>
+//		+ 버튼을 누르면, 
+//			옆에있는 4라는 숫자를 찾아서 값을 가져오고
+//			거기에 1을 더함
+//			1 더한 숫자를 다시 거기에 박아넣기
+		
+		$('.plus').click(function(){
+			var num = $(this).siblings('span').text();
+			num = parseInt(num) + 1;
+			$(this).siblings('span').text(num);
+		});
+			
+	
+	</script>
+	
+	
+	
+	
+	
+  <script>
+		
+		function SampleData(id,name,price,quantity,size) {
+			this.id = id;
+			this.name = name;
+			this.price = price;
+			this.quantity = quantity;
+			this.size = size;
+			localStorage.setItem('product'+this.id, JSON.stringify(this));
+			
+		}
+		
+		var data = new SampleData(1,'Blossom',199,2,'Small');
+		var data2 = new SampleData(2,'BlueShirt',99,1,'Large');
+		var data3 = new SampleData(3,'BlackDress',159,1,'Medium');
+		var data4 = new SampleData(4,'RedDress',59,1,'Medium');
+
+//	1. 상품을 꺼내서
+//	2. <tr></tr>이걸 만들어서
+//  3. <tbody>에 꽂아넣기
+	
+	for (var i = 0; i < localStorage.length; i++){
+		//product1 ~ 4까지 뽑아야하는뎅
+		var dataget = localStorage.getItem('product' + (1 + i));
+		var dataItem = JSON.parse(dataget);
+		console.log(dataItem);
+		
+		var template ='<tr>';
+				template += '<th scope="row">1</th>';
+				template += '<td>'+dataItem.name+'</td>';
+				template += '<td>'+dataItem.quantity+'</td>';
+				template += '<td>'+dataItem.size+'</td>';
+				template += '</tr>';
+
+		$('tbody').append(template);
+	}	
+		
+		
+		var array = ['철수','영희','흥민'];
+		
+		
+		for (var i = 0; i < array.length; i++){
+			console.log(array[i] + 1);
+		}
+		
+		array.forEach(function(a){
+			console.log(a);
+		});
+		
+		var object = {
+			name : 'BMW',
+			model : 520
+		}
+		
+		for (var key in object) {
+			if (object.hasOwnProperty(key)){
+        console.log(object[key]);
+			}
+		}
+
+	
+	
+		var tracer = {
+			q : 'PulseBomb',
+			e : 'Recall',
+			sayHi : function(){
+				console.log('Hello');
+			}
+		}
+		
+		var hanzo = {
+			q : 'DragonStrike',
+			e : 'ScatterArrow',
+			sayHi : function(){
+				console.log('Hello');
+			}
+		}
+
+		function Hero(스킬1,스킬2){
+			this.q = 스킬1;
+			this.e = 스킬2;
+			this.sayHi = function(){
+				console.log('Hello');	
+			}
+		}
+		var tracer = new Hero('PulseBomb','Recall');
+		var hanzo = new Hero();
+		
+		Hero.r = '뭐 어쩌구 스킬';
+		Hero.prototype.r = '뭐 어쩌구 스킬';
+
+		console.log(tracer);
+		
+		var array = [1,2,3,4,5];
+		var array = new Array();
+		
+		
+		
+		//this = Hero에 의해 새로 생성될 자식새끼들(instance)
+
+		
+	</script>
+  
+  
+  
+  
+  
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+</body>
+</html>

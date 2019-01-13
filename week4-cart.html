@@ -1,0 +1,303 @@
+<!doctype html>
+<html lang="en">
+  <head>
+	<!-- Required meta tags -->
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+	<!-- Bootstrap CSS -->
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+
+	<link href="main.css" rel="stylesheet">
+
+	<title>Hello, world!</title>
+</head>
+
+<body>
+	<nav class="navbar navbar-expand-lg navbar-light bg-light">
+		<a class="navbar-brand">Dress Shop</a>
+		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+		<div class="collapse navbar-collapse" id="navbarSupportedContent">
+			<ul class="navbar-nav ml-auto">
+				<li class="nav-item active">
+					<a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="#">Products</a>
+				</li>
+				<li class="nav-item dropdown">
+					<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Dropdown
+        </a>
+					<div class="dropdown-menu" aria-labelledby="navbarDropdown">
+						<a class="dropdown-item" href="#">Action</a>
+						<a class="dropdown-item" href="#">Another action</a>
+						<div class="dropdown-divider"></div>
+						<a class="dropdown-item" href="#">Something else here</a>
+					</div>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link disabled" href="#">Disabled</a>
+				</li>
+			</ul>
+
+		</div>
+	</nav>
+
+	<div class="container text-center my-5">
+		<h4>장바구니</h4>
+	</div>
+
+	<table class="table">
+		<thead class="thead-dark">
+			<tr>
+				<th scope="col">#</th>
+				<th scope="col">상품명</th>
+				<th scope="col">수량</th>
+				<th scope="col">가격</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<th scope="row">1</th>
+				<td>Blossom Dress</td>
+				<td>
+					<button class="btn" data-id="0" id="plus">+</button>
+<!--					<span value="1" class="set" id="set">4</span>-->
+					 <input name="qty" value="1" class="input-text tit_16">
+					<button class="btn" data-id="1" id="minus">-</button>
+				</td>
+				<td>199</td>
+			</tr>
+		</tbody>
+	</table>
+	
+	<div>
+	    <h1 id="total" data="199">199<span>원</span></h1> 
+	     <h3 class="tit_20 total" data="260000">260,000<span>WON</span></h3>
+	</div>
+
+	<!-- <p>복습겸 숙제1. 수량 + 버튼, - 버튼을 만들어봅시다. 단 - 버튼은 음수 이하로 내려가는걸 막아야합니다. </p> -->
+	<!-- <p>숙제2. 표 하단에 총 결제금액을 계산해서 표시해주는 기능을 만들어봅시다. 
+	        가격과 수량을 곱해서 전부 더해주면 되겠죠? 그리고 수량을 +,- 버튼으로 변동할 때도 총 금액이 그때그때 변동되어야합니다.</p> 
+    -->
+
+	<script>
+// var num = document.querySelector('.set').innerHTML;
+// var i = Number(num) + 1
+// document.querySelector('.set').innerHTML = i;
+		document.getElementById('plus').addEventListener('click',(e)=>{
+            e.stopPropagation();
+            var num1 = parseInt(document.querySelector('.input-text').value);
+            if(e.target.getAttribute('data-id') == 0){
+                num1++;
+                console.log(parseInt(num1));
+               }
+            
+            var price = document.getElementById('total').getAttribute(data);
+            var total_price = parseInt(num1) * parseInt(price);
+            document.getElementById('total').innerHTML = total_price;
+		});
+
+		document.getElementById('minus').addEventListener('click', ()=>{
+				var num = document.querySelector('.set').innerHTML;
+				var i = Number(num) - 1
+				if(i < 0){
+					alert('음수는 안되용')
+					i = 0;
+					  return false;
+				}
+				document.querySelector('.set').innerHTML = i;
+		});
+	</script>
+	
+
+	
+   
+
+	<!-- <p>숙제3-1. 상점 메뉴를 만들려고 메뉴에 필요한 데이터들을 요청했더니 
+	[['가방','악세서리'],['구두','장화','운동화'],['티셔츠','반팔']] 이라는 복잡한 Array 데이터가 도착했습니다. 
+	가방,악세서리,구두,장화 등 모든 글자를 콘솔창에 한줄씩 출력하려면 어떻게 반복문을 돌려야할까요?</p> 
+	-->
+
+	<script>
+		var menu = [
+			['가방', '악세서리'],
+			['구두', '장화', '운동화'],
+			['티셔츠', '반팔']
+		];
+        
+        for(var i = 0; i< menu.length; i++){
+            console.log(menu[i]);
+        }
+	</script>
+
+	<!-- <p>숙제3-2. 오잉 다시보니 가방과 악세서리는 Array가 아니군요. 이 자료는 어떻게 반복문을 돌려야 아까처럼 똑같이 한글자씩 출력가능할까요?</p> -->
+
+	<script>
+		var menu = ['가방', '악세서리', 
+					['구두', '장화', '운동화'],
+					['티셔츠', '반팔']
+					];
+	</script>
+
+
+	<!-- <p>숙제4. 메인페이지에 로그인 모달창 있던거 기억나십니까. ajax배운 기념으로 사이트 로그인을 새로고침없이 ajax요청으로 만들려고 합니다. 아이디와 비번을 입력후 submit버튼을 누르면 ajax요청하는 코드를 작성해보세요.
+		<br>조건1. login.php 라는 url로 POST 요청을 해야합니다.
+		<br>조건2. 요청시 id : '~~', pass : '~~' 이 두가지 데이터를 서버에 전달해야합니다.
+		<br>조건3. 서버가 없어 테스트는 불가능하지만 성공시 콘솔창에 성공, 실패시 콘솔창에 에러메세지를 띄우도록 코드를 짭니다.
+	</p> -->
+
+	<!-- <p>숙제5. 이것은 출석부입니다. 실수로 이상하게 object안에 object를 넣어서 데이터를 만들어놨는데, 이걸 콘솔창에 하나씩 출력하려고합니다. -->
+	
+	<!-- <br>가장 안쪽에 있는 object 데이터의 key와 value를 하나씩 차례로 출력시키려면 어떻게 해야할까요? (팁 : 당연히 var in 문법을 사용합니다.)</p>
+	
+	(콘솔창 출력 결과)
+	이름 = 김설기
+	특기 = 순대자르기
+	이름 = 최빌리
+	취미 = 자바스크립트
+	이름 = 강선구
+	장래희망 = 눕기 -->
+
+	<script>
+		var messages = {
+			학생1: {
+				이름: "김설기",
+				특기: "순대자르기"
+			},
+			학생2: {
+				이름: "최빌리",
+				취미: "자바스크립트"
+			},
+			학생3: {
+				이름: "강선구",
+				장래희망: "눕기"
+			}
+		}
+		
+
+		
+		
+	</script>
+
+	<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+
+	<script>
+		//이것은 강제로 localStorage에 상품4개를 넣는 코드입니다. 
+		function SampleData(id, name, price, quantity, size) {
+			this.id = id;
+			this.name = name;
+			this.price = price;
+			this.quantity = quantity;
+			this.size = size;
+			localStorage.setItem('product' + this.id, JSON.stringify(this));
+
+		}
+
+		var data = new SampleData(1, 'Blossom', 199, 2, 'Small');
+		var data2 = new SampleData(2, 'Blue Shirt', 99, 1, 'Large');
+		var data3 = new SampleData(3, 'Black Dress', 159, 1, 'Medium');
+		var data4 = new SampleData(4, 'Red Dress', 59, 1, 'Medium');
+
+
+		//	1. 상품을 꺼내서
+		//	2. <tr></tr>이걸 만들어서
+		//  3. <tbody>에 꽂아넣기
+
+
+		for (var i = 0; i < localStorage.length; i++) {
+
+			//product1 ~ 4까지 뽑아야하는뎅
+			var data = localStorage.getItem('product' + (1 + i));
+			var data2 = JSON.parse(data);
+
+			var template =
+				`<tr>
+					<th scope="row">1</th>
+					<td>${data2.name}</td>
+					<td>${data2.quantity}</td>
+					<td>${data2.price}</td>
+				</tr>`;
+
+			$('tbody').append(template);
+		}
+
+
+		var array = ['철수', '영희', '흥민'];
+
+
+		for (var i = 0; i < array.length; i++) {
+			console.log(array[i] + 1);
+		}
+
+		array.forEach(function(a) {
+			console.log(a);
+		});
+
+		var object = {
+			name: 'BMW',
+			model: 520
+		}
+
+		for (var key in object) {
+			if (object.hasOwnProperty(key)) {
+				console.log(object[key]);
+			}
+		}
+
+
+
+
+
+
+
+		var tracer = {
+			q: 'PulseBomb',
+			e: 'Recall',
+			sayHi: function() {
+				console.log('Hello');
+			}
+		}
+
+		var hanzo = {
+			q: 'DragonStrike',
+			e: 'ScatterArrow',
+			sayHi: function() {
+				console.log('Hello');
+			}
+		}
+
+		function Hero(스킬1, 스킬2) {
+			this.q = 스킬1;
+			this.e = 스킬2;
+			this.sayHi = function() {
+				console.log('Hello');
+			}
+		}
+		var tracer = new Hero('PulseBomb', 'Recall');
+		var hanzo = new Hero();
+
+		Hero.r = '뭐 어쩌구 스킬';
+		Hero.prototype.r = '뭐 어쩌구 스킬';
+
+
+		var array = [1, 2, 3, 4, 5];
+		var array = new Array();
+
+
+
+		//this = Hero에 의해 새로 생성될 자식새끼들(instance)
+	</script>
+
+
+
+
+
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+</body>
+</html>
