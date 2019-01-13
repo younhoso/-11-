@@ -83,9 +83,10 @@ $(document).ready(function(){
 			}
 	
 			var datastring = JSON.stringify(Data);
-			for(var i = 0; i<localStorage.length; i++){
-				localStorage.setItem('product' + e.target.dataset.id(i), datastring)
-			}
+			localStorage.setItem('product' + e.target.dataset.id, datastring)
+			// 데이터 추가
+			// localStorage.setItem('product1', datastring)
+
 
 			// localStorage.clear(data2);
 
