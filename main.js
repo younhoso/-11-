@@ -86,6 +86,12 @@ $(document).ready(function(){
 			for(var i = 0; i<localStorage.length; i++){
 				localStorage.setItem('product' + e.target.dataset.id(i), datastring)
 			}
+
+			// localStorage.clear(data2);
+
+			// for (var i = 0; i < localStorage.length; i++) {
+			// 	console.log(localStorage.getItem(localStorage.key(i)));
+			// }
 	
 		});
 	});
